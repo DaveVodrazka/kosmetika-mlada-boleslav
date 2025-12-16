@@ -1,13 +1,122 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const priceList = [
+  {
+    title: "Lifting & anti-age rituály",
+    items: [
+      { name: "Radiofrekvenční lifting + maska", price: "1 490 Kč", note: "90 min" },
+      { name: "Kolagenové ošetření s masáží", price: "1 250 Kč", note: "75 min" },
+      { name: "Expresní vypnutí pleti", price: "890 Kč", note: "45 min" },
+    ],
+  },
+  {
+    title: "Hloubkové ošetření pleti",
+    items: [
+      { name: "Čištění + rozjasnění", price: "950 Kč", note: "70 min" },
+      { name: "Hydratační rituál Glow", price: "1 050 Kč", note: "70 min" },
+      { name: "Ošetření citlivé pleti", price: "980 Kč", note: "60 min" },
+    ],
+  },
+  {
+    title: "Relax těla & aroma",
+    items: [
+      { name: "Aromamasáž zad a šíje", price: "490 Kč", note: "30 min" },
+      { name: "Celotělový peeling + masáž", price: "1 150 Kč", note: "75 min" },
+      { name: "Rituál pro unavené nohy", price: "550 Kč", note: "35 min" },
+    ],
+  },
+];
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const extras = [
+  { name: "Úprava obočí + barvení", price: "240 Kč" },
+  { name: "Barvení řas", price: "220 Kč" },
+  { name: "Depilace horní ret / brada", price: "170 Kč" },
+  { name: "Depilace lýtka / celé nohy", price: "320 / 520 Kč" },
+  { name: "Depilace ruce", price: "260 Kč" },
+];
 ---
 
-<Layout>
-	<ul>
-		<li>Nehty</li>
-		<li>Vlasy</li>
-	</ul>
+<Layout title="Služby a ceník">
+  <section class="relative overflow-hidden pb-10 pt-28">
+    <div class="mx-auto max-w-5xl px-6 space-y-6">
+      <p class="text-sm font-semibold uppercase tracking-[0.18em] text-rose">Služby & ceník</p>
+      <h1 class="text-4xl font-display font-semibold text-ink sm:text-5xl">Péče, která respektuje vaši pleť</h1>
+      <p class="max-w-3xl text-ink-soft">
+        Všechny procedury přizpůsobuji stavu pleti, ročnímu období i vašemu komfortu. Pokud si nejste jistí, co zvolit,
+        doporučím kombinaci během úvodní konzultace. Ceny zahrnují diagnostiku pleti a závěrečnou doporučenou rutinu.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a href="tel:+420777187938" class="rounded-full bg-ink px-5 py-3 text-sm font-semibold text-contrast hover:bg-rose">
+          +420 777 187 938
+        </a>
+        <a href="mailto:info@kosmetikamladaboleslav.cz" class="rounded-full border border-ink/15 bg-contrast px-5 py-3 text-sm font-semibold text-ink hover:border-rose hover:text-rose">
+          Rezervace e-mailem
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="pb-20">
+    <div class="mx-auto max-w-5xl px-6 space-y-8">
+      <div class="grid gap-6 rounded-[28px] border border-rose/25 bg-contrast/80 p-8 shadow-[0_30px_80px_-45px_rgba(0,0,0,0.35)]">
+        {priceList.map((group) => (
+          <div class="space-y-4 rounded-2xl border border-rose/15 bg-white/70 p-5">
+            <div class="flex items-center justify-between gap-3">
+              <h2 class="text-xl font-display font-semibold text-ink">{group.title}</h2>
+              <span class="rounded-full bg-rose/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-rose">
+                Rezervace nutná
+              </span>
+            </div>
+            <div class="divide-y divide-rose/10 text-sm">
+              {group.items.map((item) => (
+                <div class="flex flex-col gap-1 py-3 sm:flex-row sm:items-center sm:justify-between">
+                  <div>
+                    <p class="font-semibold text-ink">{item.name}</p>
+                    {item.note && <p class="text-ink-soft text-xs">{item.note}</p>}
+                  </div>
+                  <p class="font-semibold text-rose">{item.price}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-[1.1fr,0.9fr] md:items-start">
+        <div class="rounded-[24px] border border-rose/20 bg-contrast p-6 shadow-sm">
+          <h3 class="text-lg font-display font-semibold text-ink">Doplňkové služby</h3>
+          <p class="text-sm text-ink-soft">Lze přidat ke kterémukoli ošetření nebo objednat samostatně.</p>
+          <div class="mt-4 divide-y divide-rose/10 text-sm">
+            {extras.map((item) => (
+              <div class="flex items-center justify-between py-3">
+                <span>{item.name}</span>
+                <span class="font-semibold text-ink">{item.price}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div class="rounded-[24px] border border-rose/20 bg-rose/10 p-6 shadow-sm">
+          <h3 class="text-lg font-display font-semibold text-ink">Jak rezervovat</h3>
+          <ul class="mt-3 space-y-3 text-sm text-ink">
+            <li class="flex gap-2">
+              <span class="mt-1 h-2 w-2 rounded-full bg-rose"></span>
+              <span>Preferuji telefonické objednávky, společně zvolíme nejvhodnější termín a proceduru.</span>
+            </li>
+            <li class="flex gap-2">
+              <span class="mt-1 h-2 w-2 rounded-full bg-rose"></span>
+              <span>Při první návštěvě provedu diagnostiku pleti a stanovíme plán péče.</span>
+            </li>
+            <li class="flex gap-2">
+              <span class="mt-1 h-2 w-2 rounded-full bg-rose"></span>
+              <span>Platba je možná hotově nebo převodem. Dárkové poukazy připravím na míru.</span>
+            </li>
+          </ul>
+          <div class="mt-5 grid gap-2 text-sm text-ink-soft">
+            <p><strong class="text-ink">Adresa:</strong> Tř. Václava Klementa 123, Mladá Boleslav</p>
+            <p><strong class="text-ink">Otevřeno:</strong> Po–Pá 9:00–19:00 (sobota dle domluvy)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>

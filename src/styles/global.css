@@ -1,13 +1,32 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #fff;
-  --color-secondary: #999;
-  --color-backgroundPrimary: #000;
-  --font-sans: "Inter", sans-serif;
-  --font-display: "Open Sans", sans-serif;
+  --color-ink: #1b120d;
+  --color-ink-soft: #3f2d23;
+  --color-cream: #f7f0e6;
+  --color-rose: #d0a47d;
+  --color-rose-soft: #edd8c6;
+  --color-forest: #1d3329;
+  --color-contrast: #fefbf6;
+  --font-sans: "Work Sans", "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Playfair Display", "Georgia", serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  scroll-behavior: smooth;
 }
 
 body {
-  @apply text-primary bg-backgroundPrimary;
+  @apply bg-cream text-ink font-sans antialiased;
+  background: radial-gradient(circle at 20% 20%, #fff4ea 0, #fff4ea 30%, transparent 40%),
+    radial-gradient(circle at 80% 10%, #f2e2d4 0, #f2e2d4 25%, transparent 40%),
+    linear-gradient(180deg, #fdf8f1 0%, #f4e6d9 100%);
+}
+
+a {
+  @apply transition-colors duration-200;
 }

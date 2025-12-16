@@ -1,9 +1,53 @@
-<footer class="bg-gray-900 text-gray-300 py-10">
-  <div class="container mx-auto px-6 text-center space-y-4">
-    <p>&copy; {new Date().getFullYear()} BeautySpa. All rights reserved.</p>
-    <p>
-      <a href="/privacy/" class="hover:text-white underline">Privacy Policy</a> ·
-      <a href="/contact/" class="hover:text-white underline">Contact</a>
-    </p>
+<footer class="bg-ink text-contrast">
+  <div class="mx-auto max-w-6xl px-6 py-12 space-y-10">
+    <div class="grid gap-10 md:grid-cols-[1.2fr,1fr,1fr]">
+      <div class="space-y-4">
+        <h3 class="text-xl font-display font-semibold text-contrast">Kosmetika Mladá Boleslav</h3>
+        <p class="text-sm text-contrast/80">
+          Individuální kosmetická péče, liftingové rituály a odpočinek v klidném prostředí s důrazem na krásu i
+          sebevědomí.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a
+            href="tel:+420777187938"
+            class="rounded-full bg-contrast px-4 py-2 text-sm font-semibold text-ink transition hover:bg-rose hover:text-contrast"
+            >+420 777 187 938</a
+          >
+          <a
+            href="mailto:info@kosmetikamladaboleslav.cz"
+            class="rounded-full border border-contrast/20 px-4 py-2 text-sm font-semibold text-contrast transition hover:border-contrast/50"
+            >info@kosmetikamladaboleslav.cz</a
+          >
+        </div>
+      </div>
+      <div class="space-y-3">
+        <h4 class="text-lg font-semibold text-contrast">Navštivte nás</h4>
+        <p class="text-sm text-contrast/80 leading-relaxed">
+          Tř. Václava Klementa 123<br />
+          293 01 Mladá Boleslav<br />
+          (2. patro, parkování u budovy)
+        </p>
+        <p class="text-sm text-contrast/80">
+          Otevřeno: Po–Pá 9:00–19:00<br />
+          Dle domluvy i sobota
+        </p>
+      </div>
+      <div class="space-y-3">
+        <h4 class="text-lg font-semibold text-contrast">Užitečné odkazy</h4>
+        <ul class="space-y-2 text-sm text-contrast/80">
+          <li><a href="/#services" class="hover:text-rose">Služby & rituály</a></li>
+          <li><a href="/sluzby" class="hover:text-rose">Ceník</a></li>
+          <li><a href="/#about" class="hover:text-rose">O salonu</a></li>
+          <li><a href="/#contact" class="hover:text-rose">Dárkové poukazy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="flex flex-col gap-2 border-t border-contrast/10 pt-6 text-xs text-contrast/70 md:flex-row md:items-center md:justify-between">
+      <p>&copy; {new Date().getFullYear()} Kosmetika Mladá Boleslav. Všechna práva vyhrazena.</p>
+      <p class="flex items-center gap-2">
+        <span class="h-1 w-1 rounded-full bg-contrast/50"></span>
+        Krása, která vydrží. Relax, který si zasloužíte.
+      </p>
+    </div>
   </div>
 </footer>

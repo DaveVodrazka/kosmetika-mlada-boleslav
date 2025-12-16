@@ -1,11 +1,274 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const services = [
+  {
+    title: "Lifting & anti-age",
+    description: "Radiofrekvenční a kolagenové rituály pro pevnější kontury a viditelně mladší pleť.",
+    duration: "60–90 min",
+    price: "od 1 200 Kč",
+  },
+  {
+    title: "Ošetření pleti",
+    description: "Hloubkové čištění, hydratace a rozjasnění s profesionální kosmetikou dle stavu pleti.",
+    duration: "70 min",
+    price: "950 Kč",
+  },
+  {
+    title: "Relax & glow",
+    description: "Aromaterapeutické masáže, peelingy a rituály pro uvolnění napětí a okamžitý jas.",
+    duration: "50–80 min",
+    price: "od 890 Kč",
+  },
+];
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const rituals = [
+  "Luxusní rituály inspirované lázněmi s hedvábnými texturami",
+  "Přístrojové ošetření pro lifting a remodelaci pleti",
+  "Šetrná depilace, úprava obočí a řas pro výrazný, ale přirozený look",
+  "Dárkové poukazy a balíčky na míru pro každou příležitost",
+];
+
+const highlights = [
+  { label: "13 let zkušeností", detail: "Licencovaná kosmetička, individuální péče" },
+  { label: "Top péče o pleť", detail: "Profesionální přípravky, citlivý přístup" },
+  { label: "Parkování u salonu", detail: "Snadný přístup na Tř. Václava Klementa" },
+];
 ---
 
 <Layout>
-	<h1>Kosmetika Mlada Boleslav</h1>
-	<a href="/sluzby">Sluzby</a>
+  <section id="hero" class="relative overflow-hidden pb-16 pt-32">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="grid items-center gap-10 lg:grid-cols-[1.1fr,0.9fr]">
+        <div class="space-y-6">
+          <p class="inline-flex items-center gap-2 rounded-full bg-rose/15 px-4 py-2 text-xs font-semibold uppercase tracking-[0.15em] text-rose">
+            Jemná estetika & relax
+          </p>
+          <h1 class="text-4xl font-display font-semibold leading-tight text-ink sm:text-5xl">
+            Krása, která působí přirozeně.
+            <span class="text-rose">Salon s péčí jako z boutique spa.</span>
+          </h1>
+          <p class="max-w-2xl text-lg text-ink-soft">
+            Osobní kosmetické rituály v Mladé Boleslavi: anti-age lifting, hloubkové čištění, aromaterapeutické
+            masáže a šetrná depilace. Intimní prostor, kde si odpočinete a odejdete sebevědomější.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a
+              href="tel:+420777187938"
+              class="inline-flex items-center gap-3 rounded-full bg-ink px-5 py-3 text-sm font-semibold text-contrast shadow-lg shadow-rose/20 transition hover:translate-y-[-1px] hover:bg-rose"
+            >
+              Rezervovat termín
+              <span class="text-xs font-medium text-contrast/80">+420 777 187 938</span>
+            </a>
+            <a
+              href="#services"
+              class="inline-flex items-center gap-2 rounded-full border border-ink/15 bg-contrast px-5 py-3 text-sm font-semibold text-ink transition hover:border-rose hover:text-rose"
+            >
+              Zobrazit nabídku
+            </a>
+          </div>
+          <div class="grid gap-3 sm:grid-cols-3">
+            {highlights.map((item) => (
+              <div class="rounded-2xl border border-rose/20 bg-contrast/70 px-4 py-3 shadow-sm">
+                <p class="text-sm font-semibold text-ink">{item.label}</p>
+                <p class="text-xs text-ink-soft">{item.detail}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div class="relative">
+          <div class="absolute inset-0 translate-x-6 translate-y-6 rounded-[28px] bg-rose/15 blur-2xl" aria-hidden="true"></div>
+          <div class="relative overflow-hidden rounded-[28px] border border-rose/30 bg-contrast shadow-[0_30px_80px_-35px_rgba(27,18,13,0.45)]">
+            <img
+              src="https://images.unsplash.com/photo-1599058917547-0f46c744f3e9?auto=format&fit=crop&w=1200&q=80"
+              alt="Kosmetická péče v salonu"
+              class="h-full w-full object-cover"
+              loading="lazy"
+            />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent p-5 text-contrast">
+              <p class="text-sm uppercase tracking-[0.2em] text-contrast/70">Klidný ateliér krásy</p>
+              <p class="text-lg font-semibold">Tř. Václava Klementa 123, Mladá Boleslav</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-contrast/80 py-12">
+    <div class="mx-auto max-w-5xl px-6">
+      <div class="grid gap-6 text-center sm:grid-cols-3">
+        <div class="rounded-2xl border border-rose/20 bg-white/60 px-6 py-5 shadow-sm">
+          <p class="text-sm uppercase tracking-[0.2em] text-rose">Péče</p>
+          <p class="text-lg font-semibold text-ink">Lifting, hydratace, rozjasnění</p>
+        </div>
+        <div class="rounded-2xl border border-rose/20 bg-white/60 px-6 py-5 shadow-sm">
+          <p class="text-sm uppercase tracking-[0.2em] text-rose">Relax</p>
+          <p class="text-lg font-semibold text-ink">Masáže, rituály, aroma</p>
+        </div>
+        <div class="rounded-2xl border border-rose/20 bg-white/60 px-6 py-5 shadow-sm">
+          <p class="text-sm uppercase tracking-[0.2em] text-rose">Detail</p>
+          <p class="text-lg font-semibold text-ink">Depilace, obočí, řasy</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="py-20">
+    <div class="mx-auto max-w-6xl px-6 space-y-10">
+      <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        <div class="space-y-3">
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-rose">Nabídka</p>
+          <h2 class="text-3xl font-display font-semibold text-ink sm:text-4xl">Kosmetické rituály na míru</h2>
+          <p class="max-w-2xl text-ink-soft">
+            Každé ošetření začíná konzultací a diagnostikou pleti. Spojujeme ruční techniky s moderní přístrojovou
+            technologií pro viditelné výsledky bez kompromisů v komfortu.
+          </p>
+        </div>
+        <a href="/sluzby" class="text-sm font-semibold text-ink hover:text-rose">Zobrazit ceník →</a>
+      </div>
+      <div class="grid gap-6 md:grid-cols-3">
+        {services.map((service) => (
+          <article class="group relative overflow-hidden rounded-3xl border border-rose/25 bg-contrast/80 p-6 shadow-[0_24px_50px_-35px_rgba(0,0,0,0.35)] transition hover:-translate-y-1 hover:shadow-[0_30px_70px_-40px_rgba(0,0,0,0.45)]">
+            <div class="absolute inset-x-0 -top-10 h-20 bg-gradient-to-b from-rose/10 via-rose/5 to-transparent" aria-hidden="true"></div>
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl font-display font-semibold text-ink">{service.title}</h3>
+              <span class="rounded-full bg-rose/15 px-3 py-1 text-xs font-semibold text-rose">{service.duration}</span>
+            </div>
+            <p class="mt-3 text-sm text-ink-soft">{service.description}</p>
+            <div class="mt-5 flex items-center justify-between text-sm font-semibold text-ink">
+              <span>{service.price}</span>
+              <span class="text-rose transition group-hover:translate-x-1">Rezervovat</span>
+            </div>
+          </article>
+        ))}
+      </div>
+      <div class="grid gap-6 rounded-3xl border border-rose/20 bg-rose/10 p-8 md:grid-cols-[1.1fr,0.9fr] md:items-center">
+        <div class="space-y-3">
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-rose">Proč k nám</p>
+          <h3 class="text-2xl font-display font-semibold text-ink">Rituály inspirované boutique spa</h3>
+          <p class="text-ink-soft">
+            Kombinuji aromaterapii, lehké masážní techniky a aktivní séra. Využívám přístrojové ošetření pro
+            okamžité vypnutí pleti, ale vždy s respektem k citlivosti pokožky.
+          </p>
+        </div>
+        <ul class="grid gap-3">
+          {rituals.map((item) => (
+            <li class="flex items-start gap-3 rounded-2xl bg-contrast px-4 py-3 text-sm text-ink shadow-sm">
+              <span class="mt-1 h-2 w-2 rounded-full bg-rose"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="bg-contrast/70 py-20">
+    <div class="mx-auto max-w-6xl px-6 grid gap-10 lg:grid-cols-[1fr,1fr] lg:items-center">
+      <div class="space-y-4">
+        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-rose">O salonu</p>
+        <h2 class="text-3xl font-display font-semibold text-ink sm:text-4xl">Klidné místo, kde jste v centru pozornosti</h2>
+        <p class="text-ink-soft">
+          Salon je navržen tak, aby působil jako malý únik z města. Tlumené světlo, měkké textilie a vůně esenciálních
+          olejů pomáhají zpomalit, zatímco precizní techniky se postarají o vaši pleť.
+        </p>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="rounded-2xl border border-rose/20 bg-white/70 p-5 shadow-sm">
+            <p class="text-sm font-semibold text-ink">Individuální diagnostika</p>
+            <p class="text-xs text-ink-soft">Režim péče nastavíme podle aktuálních potřeb a životního stylu.</p>
+          </div>
+          <div class="rounded-2xl border border-rose/20 bg-white/70 p-5 shadow-sm">
+            <p class="text-sm font-semibold text-ink">Citlivý přístup</p>
+            <p class="text-xs text-ink-soft">Přípravky a postupy volíme šetrně, aby pleť zářila bez podráždění.</p>
+          </div>
+        </div>
+        <a href="mailto:info@kosmetikamladaboleslav.cz" class="inline-flex items-center gap-2 text-sm font-semibold text-ink hover:text-rose">
+          Potřebujete poradit? Napište mi →
+        </a>
+      </div>
+      <div class="relative">
+        <div class="absolute inset-0 -translate-y-6 translate-x-6 rounded-[28px] bg-rose/20 blur-2xl" aria-hidden="true"></div>
+        <div class="relative rounded-[28px] border border-rose/25 bg-contrast p-6 shadow-[0_30px_70px_-40px_rgba(0,0,0,0.45)] space-y-6">
+          <div class="rounded-2xl bg-ink text-contrast px-5 py-4">
+            <p class="text-sm uppercase tracking-[0.18em] text-contrast/70">Rituál měsíce</p>
+            <p class="text-lg font-display font-semibold">Glow & Lift Signature</p>
+            <p class="text-sm text-contrast/80">Hloubková hydratace, radiofrekvence, masáž obličeje a krku.</p>
+          </div>
+          <div class="grid gap-3">
+            <div class="flex items-center justify-between rounded-xl border border-rose/20 bg-white/60 px-4 py-3">
+              <div>
+                <p class="text-sm font-semibold text-ink">Lifting + kolagenová maska</p>
+                <p class="text-xs text-ink-soft">90 minut čistého relaxu</p>
+              </div>
+              <span class="text-sm font-semibold text-rose">1 490 Kč</span>
+            </div>
+            <div class="flex items-center justify-between rounded-xl border border-rose/20 bg-white/60 px-4 py-3">
+              <div>
+                <p class="text-sm font-semibold text-ink">Aroma masáž zad & šíje</p>
+                <p class="text-xs text-ink-soft">30 minut, možnost rozšíření</p>
+              </div>
+              <span class="text-sm font-semibold text-rose">490 Kč</span>
+            </div>
+          </div>
+          <p class="text-xs text-ink-soft">
+            Všechny procedury lze kombinovat, ráda vám sestavím harmonogram péče o pleť i tělo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="mx-auto max-w-5xl px-6">
+      <div class="rounded-[30px] border border-rose/25 bg-gradient-to-br from-rose/20 via-contrast to-white/90 p-10 shadow-[0_30px_80px_-45px_rgba(0,0,0,0.4)]">
+        <div class="grid gap-8 md:grid-cols-[1fr,1fr] md:items-center">
+          <div class="space-y-3">
+            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-rose">Rezervace</p>
+            <h3 class="text-2xl font-display font-semibold text-ink">Vyberte si čas, já zajistím zbytek</h3>
+            <p class="text-ink-soft">
+              Zavolejte nebo napište a společně najdeme termín. Pokud chcete dárkový poukaz, připravím jej elegantně
+              zabalený k vyzvednutí.
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <a href="tel:+420777187938" class="rounded-full bg-ink px-4 py-2 text-sm font-semibold text-contrast hover:bg-rose">
+                +420 777 187 938
+              </a>
+              <a href="mailto:info@kosmetikamladaboleslav.cz" class="rounded-full border border-ink/15 bg-contrast px-4 py-2 text-sm font-semibold text-ink hover:border-rose hover:text-rose">
+                info@kosmetikamladaboleslav.cz
+              </a>
+            </div>
+          </div>
+          <div class="grid gap-3 text-sm text-ink">
+            <div class="flex items-center justify-between rounded-2xl bg-white/80 px-4 py-3 shadow-sm">
+              <span class="font-semibold">Otevírací doba</span>
+              <span class="text-ink-soft">Po–Pá 9:00–19:00</span>
+            </div>
+            <div class="flex items-center justify-between rounded-2xl bg-white/80 px-4 py-3 shadow-sm">
+              <span class="font-semibold">Adresa</span>
+              <span class="text-ink-soft">Tř. Václava Klementa 123</span>
+            </div>
+            <div class="flex items-center justify-between rounded-2xl bg-white/80 px-4 py-3 shadow-sm">
+              <span class="font-semibold">Parkování</span>
+              <span class="text-ink-soft">U budovy, výtah do 2. patra</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="pb-24">
+    <div class="mx-auto max-w-4xl px-6 space-y-6 text-center">
+      <p class="text-sm font-semibold uppercase tracking-[0.18em] text-rose">Kontakt</p>
+      <h2 class="text-3xl font-display font-semibold text-ink">Těším se na vaši návštěvu</h2>
+      <p class="text-ink-soft">
+        Napište, zavolejte nebo se rovnou zastavte. Salon se nachází v centru Mladé Boleslavi s pohodlným parkováním.
+      </p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="tel:+420777187938" class="rounded-full bg-ink px-5 py-3 text-sm font-semibold text-contrast hover:bg-rose">Zavolat</a>
+        <a href="mailto:info@kosmetikamladaboleslav.cz" class="rounded-full border border-ink/15 bg-contrast px-5 py-3 text-sm font-semibold text-ink hover:border-rose hover:text-rose">Napsat e-mail</a>
+        <a href="/sluzby" class="rounded-full bg-rose/20 px-5 py-3 text-sm font-semibold text-rose hover:bg-rose/30">Ceník & nabídka</a>
+      </div>
+    </div>
+  </section>
 </Layout>

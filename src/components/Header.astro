@@ -1,11 +1,30 @@
-<header class="fixed w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
-  <nav class="container mx-auto flex justify-between items-center py-4 px-6">
-    <a href="/" class="text-2xl font-display font-semibold text-gray-900">BeautySpa</a>
-    <ul class="flex gap-6 text-gray-700 font-medium">
-      <li><a href="/" class="hover:text-pink-600">Home</a></li>
-      <li><a href="/services/" class="hover:text-pink-600">Services</a></li>
-      <li><a href="/about/" class="hover:text-pink-600">About</a></li>
-      <li><a href="/contact/" class="hover:text-pink-600">Contact</a></li>
-    </ul>
+<header class="sticky top-0 z-50 bg-contrast/90 backdrop-blur-xl border-b border-rose/20 shadow-[0_10px_30px_-20px_rgba(0,0,0,0.3)]">
+  <nav class="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-4 md:flex-row md:items-center md:justify-between">
+    <div class="flex items-center gap-3">
+      <div class="flex h-12 w-12 items-center justify-center rounded-full bg-rose/15 text-rose">
+        <span class="text-lg font-semibold">KM</span>
+      </div>
+      <div>
+        <a href="/" class="block text-xl font-display font-semibold text-ink">
+          Kosmetika Mladá Boleslav
+        </a>
+        <p class="text-sm text-ink-soft">Péče o pleť • relax • sebejistota</p>
+      </div>
+    </div>
+    <div class="flex flex-wrap items-center justify-between gap-4 md:justify-end">
+      <ul class="flex flex-wrap items-center gap-4 text-sm font-medium text-ink-soft md:gap-6">
+        <li><a href="/#hero" class="hover:text-rose">Domů</a></li>
+        <li><a href="/#services" class="hover:text-rose">Služby</a></li>
+        <li><a href="/#about" class="hover:text-rose">O salonu</a></li>
+        <li><a href="/#contact" class="hover:text-rose">Kontakt</a></li>
+        <li><a href="/sluzby" class="hover:text-rose">Ceník</a></li>
+      </ul>
+      <a
+        href="tel:+420777187938"
+        class="inline-flex items-center gap-2 rounded-full bg-ink text-contrast px-5 py-2 text-sm font-semibold shadow-lg shadow-rose/20 transition hover:translate-y-[-1px] hover:bg-rose"
+      >
+        Rezervovat: +420 777 187 938
+      </a>
+    </div>
   </nav>
 </header>
