@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import salonImg from '../assets/salon.jpeg';
 
@@ -99,11 +98,9 @@ const highlights = [
         <div class="relative">
           <div class="absolute inset-0 translate-x-6 translate-y-6 rounded-[28px] bg-rose/15 blur-2xl" aria-hidden="true"></div>
           <div class="relative overflow-hidden rounded-[28px] border border-rose/30 bg-contrast shadow-[0_30px_80px_-35px_rgba(27,18,13,0.45)]">
-            <Image
-              src={salonImg}
+            <img
+              src={salonImg.src}
               alt="Kosmetická péče v salonu"
-              widths={[768, 1024, 1440]}
-              format={'jpeg'}
               class="h-full w-full object-cover"
               loading="lazy"
             />
