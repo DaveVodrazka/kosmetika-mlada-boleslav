@@ -34,9 +34,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Install sharp for astro:assets
-        run: pnpm add sharp --no-save
-
       - name: Build
         run: pnpm run build
 
